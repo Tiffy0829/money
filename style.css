@@ -1,136 +1,135 @@
 /* 所有元素都採用 border-box 盒模型，padding 和 border 不會影響元素的總寬高 */
 * {
-    box-sizing: border-box;
-  }
-  
-  /* 設定整個網頁 body 的樣式 */
-  body {
-    margin: 0; /* 移除預設邊距 */
-    font-family: 'Comic Sans MS', sans-serif; /* 設定字型為 Comic Sans MS，找不到時用 sans-serif 替代 */
-    background-color: #ffffff; /* 背景為白色 */
-  }
-  
-  /* 外層容器，使用 Flexbox 垂直填滿整個視窗高度 */
-  .container {
-    display: flex;
-    height: 100vh; /* 高度佔滿整個瀏覽器視窗 */
-  }
-  
-  /* 左右兩邊的 pane 都各佔一半寬度，內邊距為 20px，內容超出則隱藏 */
-  .left-pane,
-  .right-pane {
-    width: 50%;
-    padding: 20px;
-    overflow: hidden;
-  }
-  
-  /* 左側區塊樣式 */
-  .left-pane {
-    background-color: #fff9f1; /* 背景為淡米色 */
-    border-right: 2px solid #a7d3ec; /* 右邊邊框為藍色 */
-    display: flex; /* 使用 Flexbox 垂直排列內容 */
-    flex-direction: column;
-    align-items: center; /* 水平置中對齊 */
-  }
-  
-  /* 主標題樣式 */
-  h1 {
-    text-align: center;
-    color: #537fb9; /* 淡藍色文字 */
-    font-size: 1.8rem;
-    margin-bottom: 10px;
-  }
-  
-  /* 表單寬度最大為 360px，會隨容器縮放 */
-  form {
-    width: 100%;
-    max-width: 360px;
-  }
-  
-  /* 表單標籤文字樣式 */
-  form label {
-    font-size: 1rem;
-    color: #537fb9; /* 淡藍色文字 */
-    display: block;
-    margin-top: 8px;
-  }
-  
-  /* 表單中的輸入框、下拉選單、按鈕樣式 */
-  form input,
-  form select,
-  form button {
-    width: 100%;
-    padding: 8px;
-    margin: 6px 0;
-    border: 2px solid #537fb9; /* 邊框淡藍色 */
-    border-radius: 8px; /* 圓角 */
-    font-size: 0.95rem;
-    color: #537fb9; /* 字體偏藍 */
-    outline: none; /* 移除點選時的外框 */
-  }
-  
-  /* 表單按鈕的額外樣式 */
-  form button {
-    background-color: #a7d3ec; /* 背景淡藍 */
-    color: white;
-    font-weight: bold;
-    cursor: pointer; /* 滑鼠移過變成指標 */
-    border: none; /* 移除原有邊框 */
-  }
-  
-  /* 按鈕 hover（滑鼠移上）效果 */
-  form button:hover {
-    background-color: #4a7292; /* 更深的藍色 */
-  }
-  
-  /* 右側區塊樣式 */
-  .right-pane {
-    background-color: #fff9f1; /* 淡黃色背景 */
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* 水平置中對齊 */
-  }
-  
-  /* 子標題樣式 */
-  h2 {
-    color: #4a7292; /* 深藍灰色 */
-    font-size: 1.3rem;
-    margin-bottom: 10px;
-  }
-  
-  /* 紀錄列表外框 */
-  .record-box {
-    width: 100%;
-    max-width: 360px;
-    background-color: #fff; /* 白色背景 */
-    border: 2px solid #a7d3ec; /* 邊框為淡藍色 */
-    border-radius: 12px; /* 圓角 */
-    padding: 12px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08); /* 陰影 */
-    height: calc(100vh - 80px); /* 除去一些空間後的高度 */
-    overflow-y: auto; /* 若內容過多，則垂直捲動 */
-  }
-  
-  /* 每一筆紀錄的樣式 */
-  .record {
-    background-color: #f8f2e1; /* 淡米色背景 */
-    border-radius: 10px; /* 圓角 */
-    border: 1px solid #a7d3ec; /* 邊框為淡藍色 */
-    padding: 10px;
-    margin: 8px 0; /* 垂直間距 */
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05); /* 輕微陰影 */
-  }
-  
-  /* 紀錄內容段落的樣式 */
-  .record p {
-    margin: 4px 0;
-    color: #5b8097; /* 淺灰藍色文字 */
-    font-size: 0.95rem;
-  }
-  
-  /* 強調文字（加粗）的樣式 */
-  .record strong {
-    color: #537fb9; /* 淡藍色 */
-    font-weight: bold;
-  }
-  
+  box-sizing: border-box;
+}
+
+/* 設定整個網頁 body 的樣式 */
+body {
+  margin: 0;
+  font-family: 'Comic Sans MS', sans-serif;
+  background-color: #ffffff;
+}
+
+/* 外層容器，使用 Flexbox 垂直填滿整個視窗高度 */
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+/* 左右兩邊的 pane 都各佔一半寬度，內邊距為 20px，內容超出則隱藏 */
+.left-pane,
+.right-pane {
+  width: 50%;
+  padding: 20px;
+  overflow: hidden;
+}
+
+/* 左側區塊樣式 */
+.left-pane {
+  background-color: #fff9f1;
+  border-right: 2px solid #a7d3ec;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 主標題樣式 */
+h1 {
+  text-align: center;
+  color: #537fb9;
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+/* 表單寬度最大為 360px，會隨容器縮放 */
+form {
+  width: 100%;
+  max-width: 360px;
+}
+
+/* 表單標籤文字樣式 */
+form label {
+  font-size: 1rem;
+  color: #537fb9;
+  display: block;
+  margin-top: 8px;
+}
+
+/* 表單中的輸入框、下拉選單、按鈕樣式 */
+form input,
+form select,
+form button {
+  width: 100%;
+  padding: 8px;
+  margin: 6px 0;
+  border: 2px solid #537fb9;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  color: #537fb9;
+  outline: none;
+}
+
+/* 表單按鈕的額外樣式 */
+form button {
+  background-color: #a7d3ec;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+}
+
+/* 按鈕 hover（滑鼠移上）效果 */
+form button:hover {
+  background-color: #4a7292;
+}
+
+/* 右側區塊樣式 */
+.right-pane {
+  background-color: #fff9f1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 子標題樣式 */
+h2 {
+  color: #4a7292;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+/* ✅ 紀錄列表外框（縮短高度） */
+.record-box {
+  width: 100%;
+  max-width: 360px;
+  background-color: #fff;
+  border: 2px solid #a7d3ec;
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+  height: calc(100vh - 400px); /* ✅ 原本是 100vh - 80px，這裡讓它變短 */
+  overflow-y: auto;
+}
+
+/* 每一筆紀錄的樣式 */
+.record {
+  background-color: #f8f2e1;
+  border-radius: 10px;
+  border: 1px solid #a7d3ec;
+  padding: 10px;
+  margin: 8px 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* 紀錄內容段落的樣式 */
+.record p {
+  margin: 4px 0;
+  color: #5b8097;
+  font-size: 0.95rem;
+}
+
+/* 強調文字（加粗）的樣式 */
+.record strong {
+  color: #537fb9;
+  font-weight: bold;
+}
