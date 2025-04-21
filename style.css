@@ -1,22 +1,19 @@
-/* 所有元素都採用 border-box 盒模型，padding 和 border 不會影響元素的總寬高 */
+/* style.css */
 * {
   box-sizing: border-box;
 }
 
-/* 設定整個網頁 body 的樣式 */
 body {
   margin: 0;
   font-family: 'Comic Sans MS', sans-serif;
   background-color: #ffffff;
 }
 
-/* 外層容器，使用 Flexbox 垂直填滿整個視窗高度 */
 .container {
   display: flex;
   height: 100vh;
 }
 
-/* 左右兩邊的 pane 都各佔一半寬度，內邊距為 20px，內容超出則隱藏 */
 .left-pane,
 .right-pane {
   width: 50%;
@@ -24,7 +21,6 @@ body {
   overflow: hidden;
 }
 
-/* 左側區塊樣式 */
 .left-pane {
   background-color: #fff9f1;
   border-right: 2px solid #a7d3ec;
@@ -33,7 +29,6 @@ body {
   align-items: center;
 }
 
-/* 主標題樣式 */
 h1 {
   text-align: center;
   color: #537fb9;
@@ -41,13 +36,11 @@ h1 {
   margin-bottom: 10px;
 }
 
-/* 表單寬度最大為 360px，會隨容器縮放 */
 form {
   width: 100%;
   max-width: 360px;
 }
 
-/* 表單標籤文字樣式 */
 form label {
   font-size: 1rem;
   color: #537fb9;
@@ -55,7 +48,6 @@ form label {
   margin-top: 8px;
 }
 
-/* 表單中的輸入框、下拉選單、按鈕樣式 */
 form input,
 form select,
 form button {
@@ -69,7 +61,6 @@ form button {
   outline: none;
 }
 
-/* 表單按鈕的額外樣式 */
 form button {
   background-color: #a7d3ec;
   color: white;
@@ -78,12 +69,10 @@ form button {
   border: none;
 }
 
-/* 按鈕 hover（滑鼠移上）效果 */
 form button:hover {
   background-color: #4a7292;
 }
 
-/* 右側區塊樣式 */
 .right-pane {
   background-color: #fff9f1;
   display: flex;
@@ -91,14 +80,12 @@ form button:hover {
   align-items: center;
 }
 
-/* 子標題樣式 */
 h2 {
   color: #4a7292;
   font-size: 1.3rem;
   margin-bottom: 10px;
 }
 
-/* ✅ 紀錄列表外框（縮短高度） */
 .record-box {
   width: 100%;
   max-width: 360px;
@@ -107,11 +94,10 @@ h2 {
   border-radius: 12px;
   padding: 12px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
-  height: calc(100vh - 400px); /* ✅ 原本是 100vh - 80px，這裡讓它變短 */
+  height: 400px; /* 修改為固定高度 */
   overflow-y: auto;
 }
 
-/* 每一筆紀錄的樣式 */
 .record {
   background-color: #f8f2e1;
   border-radius: 10px;
@@ -119,17 +105,42 @@ h2 {
   padding: 10px;
   margin: 8px 0;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  position: relative;
 }
 
-/* 紀錄內容段落的樣式 */
 .record p {
   margin: 4px 0;
   color: #5b8097;
   font-size: 0.95rem;
 }
 
-/* 強調文字（加粗）的樣式 */
 .record strong {
   color: #537fb9;
   font-weight: bold;
+}
+
+.delete-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #ff6b6b;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  padding: 4px 8px;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+#chart-container {
+  width: 100%;
+  max-width: 400px;
+  margin-top: 20px;
+}
+
+#stats {
+  margin-top: 20px;
+  color: #4a7292;
+  font-weight: bold;
+  text-align: center;
 }

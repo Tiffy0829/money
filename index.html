@@ -5,10 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>簡單記帳本</title>
   <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
   <div class="container">
-    <!-- 左側輸入表單 -->
+    <!-- 左側表單區 -->
     <div class="left-pane">
       <h1>簡單記帳本(・∀・)つ⑩</h1>
       <form id="recordForm">
@@ -17,6 +18,7 @@
 
         <label for="category">類別：</label>
         <select id="category">
+          <option value="收入">收入</option>
           <option value="飲食">飲食</option>
           <option value="交通">交通</option>
           <option value="生活用品">生活用品</option>
@@ -32,13 +34,19 @@
 
         <button type="submit">新增記帳</button>
       </form>
+
+      <!-- 總支出統計 -->
+      <div id="stats"></div>
     </div>
 
-    <!-- 右側資料顯示 -->
+    <!-- 右側紀錄與圖表區 -->
     <div class="right-pane">
       <h2>記帳紀錄</h2>
       <div class="record-box">
         <div id="records"></div>
+      </div>
+      <div id="chart-container">
+        <canvas id="myChart"></canvas>
       </div>
     </div>
   </div>
